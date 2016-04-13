@@ -11,9 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "caller_appearances", force: :cascade do |t|
+    t.datetime "date"
+  end
+
+  create_table "episodes", force: :cascade do |t|
+    t.datetime "date"
+    t.text     "description"
+  end
+
+  create_table "guest_appearances", force: :cascade do |t|
+    t.datetime "date"
+  end
+
+  create_table "music", force: :cascade do |t|
+    t.string "song"
+    t.string "artist"
+    t.string "album"
+    t.string "record_label"
+  end
 
 end
