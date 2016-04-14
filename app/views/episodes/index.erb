@@ -1,0 +1,9 @@
+<h1>All Episodes</h1>
+
+<ol>
+  <% @episodes.each do |f| %>
+    <li><a href="/episodes/<%= f.id %>" ><%= f.date %></a></li>
+  <% end %>
+</ol>
+
+<p><a href="/episodes/new" class="btn btn-default" >New Episode</a></p>

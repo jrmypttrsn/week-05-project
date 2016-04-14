@@ -29,12 +29,6 @@
    erb :"episodes/show"
  end
  
- # answer
- get "/episodes/:id/answer/?" do
-   @episode = Episode.find_by_id(params['id'])
-   erb :"episodes/answer"
- end
- 
  # edit
  get "/episodes/:id/edit/?" do
    @episode = Episode.find_by_id(params['id'])

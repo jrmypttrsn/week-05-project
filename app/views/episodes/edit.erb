@@ -1,0 +1,28 @@
+<h1>Edit Episode</h1>
+
+<% if @episode.errors.any? %>
+  <div>
+    <h2>Errors:</h2>
+    <ul>
+      <% @episode.errors.full_messages.each do |e| %>
+        <li><%= e %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<form action="/episode/<%= @episode.id %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <div>
+    Date:
+    <input type="textarea" name="date" value="<%= @episode.date %>">
+  </div>
+  <div>
+    Description:
+    <input type="textarea" name="description" value="<%= @episode.description %>">
+  </div>
+  <div>
+    <input type="submit" value="Update Episode">
+  </div>
+
+</form>

@@ -1,0 +1,27 @@
+<h1>New Episode</h1>
+
+<% if @episode.errors.any? %>
+  <div>
+    <h2>Errors:</h2>
+    <ul>
+      <% @episode.errors.full_messages.each do |e| %>
+        <li><%= e %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<form action="/episodes" method="post">
+  <div class="form-group">
+    Date:
+    <input type="text" class="form-control" name="date" value="<%= @episode.date %>">
+  </div>
+  <div class="form-group">
+    Description:
+    <input type="text" class="form-control" name="description" value="<%= @episode.description %>">
+  </div>
+  <div class="form-group">
+    <input type="submit" value="Add a New Episode" class="btn btn-default">
+  </div>
+
+</form>
