@@ -11,22 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 7) do
+ActiveRecord::Schema.define(version: 10) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "caller_appearances", force: :cascade do |t|
-    t.datetime "date"
+    t.date "date"
   end
 
   create_table "episodes", force: :cascade do |t|
-    t.datetime "date"
-    t.text     "description"
+    t.date "date"
+    t.text "description"
   end
 
   create_table "guest_appearances", force: :cascade do |t|
-    t.datetime "date"
+    t.date "date"
   end
 
   create_table "musics", force: :cascade do |t|

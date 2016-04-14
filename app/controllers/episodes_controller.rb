@@ -8,9 +8,9 @@
  
  # create
  post "/episodes/?" do
-   @episode = Episodes.new(params)
+   @episode = Episode.new(params)
  
-   if Episode.save
+   if @episode.save
      redirect to("/episodes")
    else
      erb :"episodes/new"
@@ -52,4 +52,5 @@
    @episode = Episode.find_by_id(params['id'])
    @episode.destroy
    redirect to("/episodes")
+   erb :""
  end
