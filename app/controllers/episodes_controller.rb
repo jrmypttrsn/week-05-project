@@ -39,8 +39,9 @@
  patch "/episodes/:id/?" do
    @episode = Episode.find_by_id(params['id'])
    
-   if @episode.update_attributes(date: params['date'],
-                                    description: params['description'])
+   if @episode.update_attributes(title: params['title'], 
+   																date: params['date'], 
+                                	description: params['description'])
      redirect to("/episodes/#{@episode.id}")
    else
      erb :"episodes/edit"
@@ -52,5 +53,5 @@
    @episode = Episode.find_by_id(params['id'])
    @episode.destroy
    redirect to("/episodes")
-   erb :""
+   erb :"episodes/edit"
  end
