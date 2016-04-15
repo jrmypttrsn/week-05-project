@@ -1,6 +1,6 @@
-class Music < ActiveRecord::Base
+class Song < ActiveRecord::Base
 
-	validates :song, presence: true
+	validates :song_title, presence: true
 	validates :artist, presence: true
 	validates :album, presence: true
 	validates :record_label, presence: true

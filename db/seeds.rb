@@ -22,30 +22,30 @@ CallerAppearance.create!(date: "03/03/2015")
 
 CallerAppearance.create!(date: "04/04/2015")
 
-GuestAppearance.create!)(date: "05/05/2015")
+GuestAppearance.create!(date: "05/05/2015")
 
-GuestAppearance.create!)(date: "06/06/2015")
+GuestAppearance.create!(date: "06/06/2015")
 
-GuestAppearance.create!)(date: "07/07/2015")
+GuestAppearance.create!(date: "07/07/2015")
 
-GuestAppearance.create!)(date: "08/08/2015")
+GuestAppearance.create!(date: "08/08/2015")
 
-Music.create!(song: "Fuckers", artist: "Savages", album: "Fuckers/Dream Baby Dream", 
+Song.create!(song_title: "Fuckers", artist: "Savages", album: "Fuckers/Dream Baby Dream", 
     record_label: "Matador Records")
 
-Music.create!(song: "Dream Baby Dream", artist: "Savages", album: "Fuckers/Dream Baby Dream", 
+Song.create!(song_title: "Dream Baby Dream", artist: "Savages", album: "Fuckers/Dream Baby Dream", 
     record_label: "Matador Records")
 
-Music.create!(song: "The Answer", artist: "Savages", album: "Adore Life", 
+Song.create!(song_title: "The Answer", artist: "Savages", album: "Adore Life", 
     record_label: "Matador Records")
 
-Music.create!(song: "Evil", artist: "Savages", album: "Adore Life", 
+Song.create!(song_title: "Evil", artist: "Savages", album: "Adore Life", 
     record_label: "Matador Records")
 
-Music.create!(song: "Sad Person", artist: "Savages", album: "Adore Life", 
+Song.create!(song_title: "Sad Person", artist: "Savages", album: "Adore Life", 
     record_label: "Matador Records")
 
-Music.create!(song: "Adore", artist: "Savages", album: "Adore Life", 
+Song.create!(song_title: "Adore", artist: "Savages", album: "Adore Life", 
     record_label: "Matador Records")
 
 Person.create!(name: "Bob", person_type: "regular")

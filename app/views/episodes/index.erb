@@ -1,8 +1,8 @@
 <h1>All Episodes</h1>
 
 <ul>
-  <% @episodes.each do |f| %>
-    <li><a href="/episodes/<%= f.id %>" ><%= f.date %></a></li>
+  <% @episodes.each do |episode| %>
+    <li><a href="/episodes/<%= episode.id %>" ><%= episode.date %></a></li>
   <% end %>
 </ul>
 

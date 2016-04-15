@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 11) do
+ActiveRecord::Schema.define(version: 14) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,20 +26,25 @@ ActiveRecord::Schema.define(version: 11) do
     t.string "title",       default: "No Title"
   end
 
-  create_table "guest_appearances", force: :cascade do |t|
-    t.date "date"
+  create_table "episodes_songs", id: false, force: :cascade do |t|
+    t.integer "episode_id", null: false
+    t.integer "song_id",    null: false
   end
 
-  create_table "musics", force: :cascade do |t|
-    t.string "song"
-    t.string "artist"
-    t.string "album"
-    t.string "record_label"
+  create_table "guest_appearances", force: :cascade do |t|
+    t.date "date"
   end
 
   create_table "people", force: :cascade do |t|
     t.string "name"
     t.string "person_type"
+  end
+
+  create_table "songs", force: :cascade do |t|
+    t.string "song_title"
+    t.string "artist"
+    t.string "album"
+    t.string "record_label"
   end
 
 end
