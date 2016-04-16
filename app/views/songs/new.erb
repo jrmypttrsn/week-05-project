@@ -14,7 +14,7 @@
 <form action="/songs" method="post">
   <div class="form-group">
     Song Title:
-    <input type="text" class="form-control" name="song-title" value="<%= @song.song_title %>">
+    <input type="text" class="form-control" name="song_title" value="<%= @song.song_title %>">
   </div>
   <div class="form-group">
     Artist:
@@ -26,23 +26,19 @@
   </div>
   <div class="form-group">
     Record Label:
-    <input type="text" class="form-control" name="record-label" value="<%= @song.record_label %>">
-  </div>
-  <div class="form-group">
+    <input type="text" class="form-control" name="record_label" value="<%= @song.record_label %>">
+  <div class="form-group"> 
+    Episode: 
     <select name="episode_id">
-    <% @episodes.each do |episode| %>
-      <% if episodes.id == @song.episode_id %>
-        <% selected = "selected" %>
-      <% else %>
-        <% selected = "" %>
+      <option>No Episode</option>
+      <% @episodes.each do |episode| %>
+        <option value="<%= episode.id %>">
+          <%= episode.date %>: <%= episode.title %>
+        </option>
       <% end %>
-      <option value="<%= episode.id %>" <%= selected %>>
-        <%= episode.date %><%= episode.title %>
-      </option>
-    <% end %>
-  </select>
+    </select>
   </div>
   <div class="form-group">
-    <input type="submit" value="Add a New Song" class="btn btn-default">
+    <input type="submit" value="Add a New Song" class="btn btn-success">
   </div>
 </form>

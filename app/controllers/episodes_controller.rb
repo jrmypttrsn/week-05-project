@@ -19,7 +19,7 @@
  
  # index
  get "/episodes/?" do
-   @episodes = Episode.all
+   @episodes = Episode.all.order(:date)
    erb :"episodes/index"
  end
  

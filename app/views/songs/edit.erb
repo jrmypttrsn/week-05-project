@@ -12,9 +12,10 @@
 <% end %>
 
 <form action="/songs/<%= @song.id %>" method="post">
+  <input type="hidden" name="_method" value="patch">
   <div class="form-group">
     Song Title:
-    <input type="text" class="form-control" name="song-title" value="<%= @song.song_title %>">
+    <input type="text" class="form-control" name="song_title" value="<%= @song.song_title %>">
   </div>
   <div class="form-group">
     Artist:
@@ -26,14 +27,19 @@
   </div>
   <div class="form-group">
     Record Label:
-    <input type="text" class="form-control" name="record-label" value="<%= @song.record_label %>">
+    <input type="text" class="form-control" name="record_label" value="<%= @song.record_label %>">
   </div>
   <div class="form-group">
     <select name="episode_id">
         <option>No Episode</option>
         <% @episodes.each do |episode| %>
+          <% if episode.id == @song.episode_ids %>
+            <% selected = "selected" %>
+          <% else %>
+            <% selected = "" %>
+          <% end %>
           <option value="<%= episode.id %>">
-            <%= episode.date %>
+            <%= episode.date %>: <%= episode.title %>
           </option>
         <% end %>
     </select>
