@@ -1,11 +1,21 @@
 <h1><%= @song.song_title %></h1>
 
-<p>Artist: <%= @song.artist %></p>
-<p>Album: <%= @song.album %></p>
-<p>Record Label: <%= @song.record_label %></p>
+<table class="table">
+	<tbody class="table-responsive">
+		<tr>
+			<th>Artist</th>
+			<th>Album</th>
+			<th>Record Label</th>
+		</tr>
+		<tr>
+			<td><%= @song.artist %></td>
+			<td><%= @song.album %></td>
+			<td><%= @song.record_label %></td>
+	</tbody>
+</table>
 
-<p>Episode(s):</p>
 <table>
+<th>Episode(s)</th>
 <% @song.episodes.each do |e| %>
   <tr>
     <td>
