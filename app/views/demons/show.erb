@@ -1,0 +1,12 @@
+<% if @demon %>
+  <h1><%= @demon.name %></h1>
+ 	<p><em>Title:</em> <%= @demon.title %></p>
+
+ 	<p><em>Currently Serving:</em> <%= @demon.division ? "#{@demon.division.name} Division" : "On Break" %></p>
+
+<% else %>
+  <p>No demon by that name exists</p>
+<% end %>
+
+<p><a href="/demons/<%= @demon.id %>/edit">Edit Demon</a></p>
+<p><a href="/demons">Back to All Demons</a></p>

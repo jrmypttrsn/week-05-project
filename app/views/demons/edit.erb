@@ -1,0 +1,33 @@
+<h1>Edit: <%= @demon.name %></h1>
+<% if @demon %>
+
+ <form action="/demons/<%= @demon.id %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <div class="form-group">
+ <h3>Name: <span class="label label-default"></h3><input type="text" name="name" value="<%= @demon.name %>" class="form-control"></br>
+<h3>Title: <span class="label label-default"></h3><input type="text", name="title", value="<%= @demon.title %>" class="form-control"></br>
+<h3>Division: <span class="label label-default"></h3>
+   <select name="division_id">
+     <option>Visit the Break Room</option>
+     <% @divisions.each do |division| %>
+       <% if division.id == @demon.division_id %>
+         <% selected = "selected" %>
+       <% else %>
+         <% selected = "" %>
+       <% end %>
+       <option value="<%= division.id %>" <%= selected %>>
+         <%= division.name %>
+       </option>
+     <% end %>
+   </select>
+  <input type="submit" value="Assign Demon" class="btn btn-primary">
+</form>
+<% else %>
+  <p>No Demon of that ID exists</p>
+<% end %>
+
+<h2><%= @demon.name %> wants to request "vacation" time</h2>
+  <form action="/demons/<%= @demon.id %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type ="submit" value="Send Demon on 'Vacation'" class="btn btn-danger">
+  </form>
