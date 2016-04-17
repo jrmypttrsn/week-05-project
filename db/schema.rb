@@ -11,9 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 1) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "demons", force: :cascade do |t|
+    t.string  "name",        null: false
+    t.string  "title",       null: false
+    t.integer "division_id"
+  end
+
+  create_table "divisions", force: :cascade do |t|
+    t.string "name",         null: false
+    t.string "circle_level", null: false
+  end
+
+  create_table "souls", force: :cascade do |t|
+    t.string  "name",        null: false
+    t.string  "occupation",  null: false
+    t.integer "division_id"
+  end
 
 end

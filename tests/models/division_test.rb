@@ -11,13 +11,15 @@ class DivisionTest < Minitest::Test
 		v = Division.new(name: "Soul Recruitment", circle_level: "Limbo")
 		assert(v.valid? "Should be valid at creation")
 
+		v.name = nil
 		refute(v.valid? "should be invalid without name")
 	end
 
 	def test_invalid_without_circle_level
 		v = Division.new(name: "Soul Recruitment", circle_level: "Limbo")
-		assert.(v.valid? "Should be valid at creation")
+		assert(v.valid? "Should be valid at creation")
 
-		refute.(v.valid? "should be invalid without circle level")
+		v.circle_level = nil
+		refute(v.valid? "should be invalid without circle level")
 	end
 end
