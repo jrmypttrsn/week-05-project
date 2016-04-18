@@ -1,0 +1,24 @@
+<h1>Pair <%= @soul.name %> with a Demon</h1>
+ 
+ <ul>
+   <% @demons.each do |demon| %>
+     <li>
+         <% if @soul.demons.include?(demon) %>
+           <form action="/souls/<%= @soul.id %>/demons/remove" method="post">
+            <input type="hidden" name="demon_id" value="<%= demon.id %>">
+             <div class="form-group">
+            <input type="submit" value="Remove <%= demon.name %>" class="btn btn-danger">
+            </div>
+           </form>
+           <% else %>
+           <form action="/souls/<%= @soul.id %>/demons/assign" method="post">
+             <input type="hidden" name="demon_id" value="<%= demon.id %>">
+              <div class="form-group">
+             <input type="submit" value="Assign <%= demon.name %>" class="btn btn-primary">
+             </div>
+           </form>
+         <% end %>
+     </li>
+   <% end %>
+ </ul>
+<p><a href="/souls/<%= @soul.id %>">Return to <%= @soul.name %></a></p>

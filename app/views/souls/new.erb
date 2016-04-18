@@ -1,0 +1,26 @@
+<% if @soul.errors.any? %>
+  <% @soul.errors.full_messages.each do |m| %>
+    <p>Error: <%= m %></p>
+  <% end %>
+<% end %>
+
+<h1>Summon a Soul™!</h1>
+
+
+<form action="/souls" method="post">
+ <h3>Name: <span class="label label-default"></h3><input type="text" name="name" class="form-control"></br>
+
+  <h3>Occupation: <span class="label label-default"></h3><input type="text", name="occupation" class="form-control"></br>
+  <h3>Division: <span class="label label-default"></h3>
+   <select name="division_id" class="form-control">
+     <option>No Division</option>
+     <% @divisions.each do |division| %>
+       <option value="<%= division.id %>">
+         <%= division.name %>
+       </option>
+     <% end %>
+   </select>
+  <input type="submit" value="Summon this Soul!" class="btn btn-primary">
+</form>
+
+<p><a href="/">Hell™</a></p>

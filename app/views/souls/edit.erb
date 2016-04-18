@@ -1,0 +1,39 @@
+<h1>Edit: <%= @soul.name %></h1>
+<% if @soul %>
+
+ <form action="/souls/<%= @soul.id %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <div class = "form-group">
+<h3>Name: <span class="label label-default"></h3><input type="text" class="form-control" name="name" value="<%= @soul.name %>" ></br>
+  </div>
+  <div class = "form-group">
+ <h3>Occupation: <span class="label label-default"></h3><input type="text" class="form-control" name="occupation" value="<%= @soul.occupation %>"></br>
+  </div>
+  <h3>Preserve: <span class="label label-default"></h3>
+   <select name="division_id">
+
+     <% @divisions.each do |division| %>
+       <% if division.id == @soul.division_id %>
+         <% selected = "selected" %>
+       <% else %>
+         <% selected = "" %>
+       <% end %>
+       <option value="<%= division.id %>" <%= selected %>>
+         <%= division.name %>
+       </option>
+     <% end %>
+   </select>
+
+  <input type="submit" value="Move Soul to another Division of Hell™" class="btn btn-primary" >
+
+</form>
+<% else %>
+
+  <p>No Soul, assuming that ID, exists in Hell™</p>
+<% end %>
+
+<h2>Send <%= @soul.name %> to that Other Place</h2>
+  <form action="/souls/<%= @soul.id %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type ="submit" value="This Soul no longer resides in Hell™" class="btn btn-danger">
+  </form>

@@ -1,0 +1,27 @@
+<% if @soul %>
+  <h1><%= @soul.name %></h1>
+ 	<p><em>Occupation:</em> <%= @soul.occupation %></p>
+
+
+<p><em>Currently Toiling in:</em> <%= @soul.division ? "#{@soul.division.name} Preserve" : "This Soul has left Hell™" %></p>
+
+  <% if @soul.division_id != nil %>
+
+
+      <% if @soul.demons.count > 0 %>  
+        <h3>Demons assigned to tormenting <%= @soul.name %>:</h3>
+        <% @soul.demons.each do |demon| %>
+          <p><%= demon.name %><P>
+        <% end %>
+      <% end %>
+     <% end %>  
+  <% else %>
+
+  <p>No Soul by that name existsin all of Hell™</p>
+
+
+<% end %>
+
+<p><a href="/souls/<%= @soul.id %>/edit">Edit Soul</a></p>
+<p><a href="/souls/<%= @soul.id %>/demons">Assign Demons</a></p>
+<p><a href="/souls">Back to All the Souls of Hell™</a></p>

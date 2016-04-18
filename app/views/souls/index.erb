@@ -1,0 +1,10 @@
+<h1>All the Souls of Hell™</h1>
+
+<ol>
+	<% @souls.each do |soul| %>
+		<li><a href="/souls/<%= soul.id %>"><%= soul.name %></li>
+	<% end %>
+</ol>
+
+<p><a href="/souls/new">Summon a New Soul to Hell™</a></p>
+<p><a href="/">Hell™</a></p>
