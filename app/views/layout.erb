@@ -2,8 +2,41 @@
 <html>
   <head>
     <title>Your Pretty Face Has Gone to Hell™</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="<%= url("/css/styles.css")%>" />
   </head>
   <body>
-    <%= yield %>
+  <nav class="navbar navbar-trans navbar-fixed-top" role="navigation">
+	    <div class="container">
+	        <div class="navbar-header">
+	            <a class="navbar-brand text-danger" href="/">HELL™</a>
+	        </div>
+	        <div class="navbar-collapse collapse" id="navbar-collapsible">
+	            <ul class="nav navbar-nav navbar-left">
+	                <li><a href="/demons">DEMONS</a></li>
+	                <li><a href="/souls">SOULS</a></li>
+	                <li><a href="/divisions">DIVISIONS</a></li>
+	                <li>&nbsp;</li>
+	            </ul>
+	            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/"><img src="/images/pentagram-red-small.svg"></a></li>
+            </ul>
+	        </div>
+	    </div>
+	</nav>
+		<section class="container">
+			<div class="row">
+			  <div class="col-md-12">  
+					<%= yield %>
+				</div>
+			</div>
+		</section>	
+	  
   </body>
+  <footer id="footer">
+	<p class="text-center"><a href="https://github.com/jrmypttrsn/week-05-project"><img src="/images/jp-skull-bw-small.svg"></a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;©Hell™</p>
+</footer>
 </html>
