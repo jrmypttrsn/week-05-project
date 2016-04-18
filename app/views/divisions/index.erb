@@ -1,0 +1,10 @@
+<h1>Active Divisions in Hell™</h1>
+
+<ul>
+	<% @divisions.each do |division| %>
+		<li><a href="/divisions/<%= division.id %>"><%= division.name %>®</li>
+	<% end %>
+</ul>
+
+<p><a href="/divisions/new">Create New Division</a></p>
+<p><a href="/">Hell™</a></p>

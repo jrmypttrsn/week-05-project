@@ -1,0 +1,29 @@
+<h1>Edit <%= @division.name %></h1>
+
+<% if @division.errors.any? %>
+  <div>
+    <h2>Errors:</h2>
+    <ul>
+      <% @division.errors.full_messages.each do |e| %>
+        <li><%= e %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<form action="/divisions/<%= @division.id %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <div class="form-group">
+    Name:
+    <input type="textarea" class="form-control" name="name" value="<%= @division.name %>">
+  </div>
+  <div class="form-group">
+    Circle Level:
+    <input type="textarea" class="form-control" name="circle_level" value="<%= @division.circle_level %>">
+  </div>
+  <div class="form-group">
+    <input type="submit" value="Update Division" class="btn btn-default">
+  </div>
+</form>
+
+<p><a href="/">Hell™</a></p>

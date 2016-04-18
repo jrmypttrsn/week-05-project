@@ -1,0 +1,20 @@
+<% if @division.errors.any? %>
+	<% @division.errors.full_messages.each do |m| %>
+		<p>Error: <%= m %></p>
+	<% end %>
+<% end %>
+
+<h1>Create a New Division in Hell™</h1>
+
+
+<form action="/divisions" method="post">
+	
+	<h3>Name: <span class="label label-default"></h3><input type="text" name="name" class="form-control"></br>
+	
+	<h3>Circle Level: <span class="label label-default"></h3><input type="text", name="circle_level" class="form-control"></br>
+	
+	<input type="submit" value="New Division" class="btn btn-primary">
+
+</form>
+
+<p><a href="/">Hell™</a></p>

@@ -1,0 +1,15 @@
+
+<% if @division %>
+  <h1><%= @division.name %>®</h1>
+ 	<p><em>Circle Level:</em> <%= @division.circle_level %>®</p>
+
+<% else %>
+  <p>No Division by that name exists in all of Hell™</p>
+<% end %>
+
+<p><a href="/divisions/<%= @division.id %>/edit">Edit <%= @division.name %>®</a></p>
+<p><a href="/divisions/<%= @division.id %>/souls">Expose all Souls toiling in this Division of Hell™</a></p>
+<p><a href="/divisions/<%= @division.id %>/demons">Reveal all Demons lurking in this Division of Hell™</a></p>
+<p><a href="/divisions">Back to All Divisions of Hell™</a></p>
+
+<p><a href="/">Hell™</a></p>

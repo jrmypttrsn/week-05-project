@@ -43,7 +43,7 @@ end
    @demon = Demon.find_by_id(params['id'])
    @division = Division.find_by_id(params['division_id'])
    if @demon.update_attributes(name: params['name'], 
-                                age: params['age'],
+                                title: params['title'],
                                 division: @division)
      redirect to("/demons/#{@demon.id}")
    else

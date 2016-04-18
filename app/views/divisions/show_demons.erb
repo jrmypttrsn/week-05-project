@@ -1,0 +1,11 @@
+<h1>All Demons at <%= @division.name %>®</h1>
+<% @demons.each do |demon| %>
+	<% if @division.id == demon.division_id %>
+		<p><em>Name:</em> <%= demon.name %></p>
+		<p><em>Title:</em> <%= demon.title %>®</p>
+  <% end %>
+<% end %>
+
+<p><a href="/divisions/<%= @division.id%>">Return to <%= @division.name %>® a Division of Hell™</a></p>
+
+<p><a href="/">Hell™</a></p>

@@ -1,0 +1,11 @@
+<h1>All Souls at <%= @division.name %>®</h1>
+<% @souls.each do |soul| %>
+	<% if @division.id == soul.preserve_id %>
+		<p><em>Name:</em> <%= soul.name %></p>
+		<p><em>Occupation:</em> <%= soul.occupation %></p>
+  <% end %>
+ <% end %>
+ 
+ <p><a href="/divisions/<%= @division.id%>">Return to <%= @division.name %>® a Division of Hell™</a></p>
+
+<p><a href="/">Hell™</a></p>
