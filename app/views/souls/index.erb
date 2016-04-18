@@ -1,9 +1,15 @@
-<h1>All the Souls of Hell™</h1>
+<div class="container">
+	<h1>ALL THE SOULS OF HELL™</h1>
 
-<ol>
-	<% @souls.each do |soul| %>
-		<li><a href="/souls/<%= soul.id %>"><%= soul.name %></li>
-	<% end %>
-</ol>
+	<ol>
+		<% @souls.each do |soul| %>
+			<li><a href="/souls/<%= soul.id %>"><%= soul.name %></li>
+		<% end %>
+	</ol>
 
-<p><a href="/souls/new">Harvest a New Soul for Hell™'s sake!</a></p>
+	<h4><a href="/souls/new">Harvest a New Soul for Hell™'s sake!</a></h4>
+</div>
+
+<div class="souls">
+	
+</div>
